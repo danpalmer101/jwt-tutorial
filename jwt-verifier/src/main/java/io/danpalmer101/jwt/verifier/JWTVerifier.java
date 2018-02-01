@@ -1,4 +1,4 @@
-package com.worldpay.mobile.poc.jwtverifier;
+package io.danpalmer101.jwt.verifier;
 
 import com.nimbusds.jose.JWEObject;
 import com.nimbusds.jose.crypto.RSADecrypter;
@@ -62,8 +62,8 @@ public class JWTVerifier {
                 "If provided, not before time must be in the past");
         assertTrue(claimsSet.getIssueTime() == null || !claimsSet.getIssueTime().after(now),
                 "If provided, issue time must be in the past");
-        assertTrue(claimsSet.getAudience().contains("worldpay_pos"),
-                "Audience must contain worldpay_pos");
+        assertTrue(claimsSet.getAudience().contains("jwt-verifier-webapp"),
+                "Audience must contain jwt-verifier-webapp");
 
         return claimsSet;
     }

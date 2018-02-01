@@ -1,7 +1,7 @@
-package com.worldpay.mobile.poc.jwtgenerator.web;
+package io.danpalmer101.jwt.generator.web;
 
 import com.nimbusds.jwt.JWTClaimsSet;
-import com.worldpay.mobile.poc.jwtverifier.JWTVerifier;
+import io.danpalmer101.jwt.verifier.JWTVerifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

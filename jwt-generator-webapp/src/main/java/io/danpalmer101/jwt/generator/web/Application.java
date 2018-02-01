@@ -1,4 +1,4 @@
-package com.worldpay.mobile.poc.jwtgenerator.web;
+package io.danpalmer101.jwt.generator.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

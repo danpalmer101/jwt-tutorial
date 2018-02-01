@@ -1,6 +1,7 @@
-package com.worldpay.mobile.poc.jwtgenerator.web;
+package io.danpalmer101.jwt.generator.web;
 
 import com.nimbusds.jwt.JWTClaimsSet;
+import io.danpalmer101.jwt.generator.JWTGenerator;
 import org.joda.time.DateTime;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,11 +31,11 @@ public class LoginController {
         JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
                 .jwtID(UUID.randomUUID().toString())
                 .subject(username)
-                .issuer("com.worldpay.mobile.poc:jwt-generator")
+                .issuer("jwt-generator-webapp")
                 .expirationTime(new DateTime().plusYears(1).toDate())
                 .notBeforeTime(new Date())
                 .issueTime(new Date())
-                .audience("worldpay_pos")
+                .audience("jwt-verifier-webapp")
                 .build();
 
         return new JWTResponse(this.jwtGenerator.generateJwt(claimsSet).serialize());
